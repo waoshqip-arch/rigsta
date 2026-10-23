@@ -1,0 +1,75 @@
+/* Rigsta docs, printed (Edge headless -> PDF). A4, light pages, amber accents. */
+@page { size: A4; margin: 18mm 16mm 18mm 16mm; }
+@page :first { margin: 0; }
+* { box-sizing: border-box; }
+body { margin: 0; font: 10.5pt/1.5 "Segoe UI", "IBM Plex Sans", Arial, sans-serif; color: #1d2126;
+  -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+a { color: #b45300; text-decoration: none; }
+.anchor { display: none; }
+
+.cover { height: 297mm; width: 210mm; background: linear-gradient(160deg, #16191e, #0c0e11 70%); color: #e6e9ec;
+  padding: 30mm 20mm 20mm; display: flex; flex-direction: column; page-break-after: always; }
+.cover-brand { color: #ff9f2e; letter-spacing: .4em; font-weight: 700; font-size: 13pt; }
+.cover h1 { font-size: 40pt; line-height: 1.05; margin: 14mm 0 4mm; color: #fff; }
+.cover p { font-size: 13pt; color: #aab3ba; margin: 0 0 12mm; }
+.cover img { width: 100%; border-radius: 4mm; border: 1px solid #3d4650; box-shadow: 0 8mm 20mm rgba(255,120,30,.18); }
+.cover .cover-foot { margin-top: auto; font-size: 10pt; color: #828c94; letter-spacing: .08em; }
+
+.ptoc { page-break-after: always; }
+.ptoc h2 { font-size: 20pt; margin: 0 0 6mm; page-break-before: auto; border-bottom: 0; }
+.ptoc .cards + h2 { margin-top: 8mm; }
+.ptoc li { padding: 1.6mm 0; }
+.ptoc ol { list-style: none; padding: 0; margin: 0; columns: 1; }
+.ptoc li { padding: 2.2mm 0; border-bottom: 1px solid #e6e1d8; font-size: 11.5pt; }
+
+h1 { font-size: 24pt; }
+h2 { font-size: 18pt; margin: 0 0 3mm; padding-bottom: 2mm; border-bottom: 2px solid #ff9f2e; page-break-before: always;
+  page-break-after: avoid; break-after: avoid; }
+main > h2:first-child { page-break-before: auto; }
+.brochure h2 { page-break-before: auto; margin-top: 9mm; }
+h3 { font-size: 13pt; margin: 6mm 0 2mm; page-break-after: avoid; break-after: avoid; }
+h4 { font-size: 11pt; margin: 5mm 0 1.5mm; color: #b45300; page-break-after: avoid; break-after: avoid; }
+p { margin: 0 0 2.6mm; }
+ul, ol { margin: 0 0 3mm; padding-left: 6mm; }
+li { margin: .8mm 0; }
+hr { display: none; }
+code { font-family: Consolas, monospace; font-size: 9pt; background: #f2eee7; padding: 0 1.2mm; border-radius: 1mm; }
+em { color: #4a525a; }
+blockquote { margin: 4mm 0; padding: 3mm 4.5mm; background: #fff6ea; border-left: 1.2mm solid #ff9f2e; border-radius: 1.5mm;
+  page-break-inside: avoid; break-inside: avoid; }
+blockquote p { margin: 0; }
+.table-wrap { margin: 3mm 0 4mm; }
+table { border-collapse: collapse; width: 100%; font-size: 9.5pt; page-break-inside: auto; }
+tr { page-break-inside: avoid; break-inside: avoid; }
+th, td { text-align: left; padding: 1.8mm 2.6mm; border-bottom: 1px solid #e0dad0; vertical-align: top; }
+th { background: #1f242a; color: #e6e9ec; font-size: 8.5pt; text-transform: uppercase; letter-spacing: .05em; }
+tbody tr:nth-child(even) td { background: #faf8f4; }
+figure.shot { margin: 4mm 0 5mm; page-break-inside: avoid; break-inside: avoid; text-align: center; }
+figure.shot img { max-width: 100%; max-height: 150mm; border-radius: 2mm; border: 1px solid #c8c2b8; }
+figure.shot.phone img { max-height: 130mm; }
+figure.shot figcaption { font-size: 9pt; color: #6b737b; margin-top: 1.5mm; }
+figure.shot.tablet img { max-height: 120mm; }
+
+/* the manual's own blocks [tools/build_docs.py `:::`] */
+.glance { margin: 2mm 0 5mm; padding: 3mm 4.5mm 1mm; background: #fbf7f0; border: 1px solid #eadfcd;
+  border-top: 1mm solid #ff9f2e; border-radius: 2mm; page-break-inside: avoid; break-inside: avoid; }
+.glance .label, .callout .label { font-size: 8pt; font-weight: 700; letter-spacing: .14em; text-transform: uppercase;
+  color: #b45300; margin-bottom: 1mm; }
+.callout { margin: 3mm 0 4mm; padding: 2.5mm 4mm .5mm; background: #f3f8f8; border-left: 1.2mm solid #0f8f86;
+  border-radius: 1.5mm; page-break-inside: avoid; break-inside: avoid; }
+.callout .label { color: #0f7a72; }
+.callout.warn { background: #fdf1ef; border-left-color: #d9443a; }
+.callout.warn .label { color: #b3261e; }
+.callout.note { background: #f5f5f3; border-left-color: #9aa1a8; }
+.callout.note .label { color: #4a525a; }
+.cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2.5mm; margin: 3mm 0 6mm; }
+.cards .card { display: block; padding: 2.5mm 3mm; border: 1px solid #e0dad0; border-radius: 2mm; background: #fbf9f6;
+  page-break-inside: avoid; break-inside: avoid; }
+.cards .card b { display: block; color: #b45300; font-size: 10pt; }
+.cards .card span { display: block; color: #4a525a; font-size: 8.5pt; line-height: 1.35; }
+.devices-row { display: grid; gap: 4mm; align-items: end; margin: 4mm 0 5mm; page-break-inside: avoid; break-inside: avoid; }
+.devices-row.n2 { grid-template-columns: 1.6fr 1fr; }
+.devices-row.n3 { grid-template-columns: 2.2fr 1.6fr 1fr; }
+.devices-row.n4 { grid-template-columns: repeat(4, 1fr); }
+.devices-row figure.shot { margin: 0; }
+.devices-row figure.shot img, .devices-row figure.shot.phone img { width: 100%; max-height: 95mm; object-fit: contain; }
